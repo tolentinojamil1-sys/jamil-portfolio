@@ -1,0 +1,1 @@
+try{if(location.pathname.endsWith("/")||location.pathname.endsWith("/index.html"))sessionStorage.removeItem("jamil-visit-theme");document.documentElement.dataset.theme=sessionStorage.getItem("jamil-visit-theme")==="dark"?"dark":"light"}catch{document.documentElement.dataset.theme="light"}
