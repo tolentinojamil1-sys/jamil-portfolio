@@ -1,3 +1,23 @@
+// Remember the visitor's theme across every page.
+const themeRoot=document.documentElement;
+let savedTheme='dark';
+try{const value=localStorage.getItem('jamil-theme');if(value==='light'||value==='dark')savedTheme=value}catch{}
+const themeToggle=document.createElement('button');
+themeToggle.type='button';themeToggle.className='theme-toggle';
+function applyTheme(theme){
+ themeRoot.dataset.theme=theme;
+ const dark=theme==='dark';
+ themeToggle.textContent=dark?'☀ Light mode':'☾ Dark mode';
+ themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
+ const meta=document.querySelector('meta[name="theme-color"]');
+ if(meta)meta.content=dark?'#171918':'#f6f5f0';
+}
+applyTheme(savedTheme);
+themeToggle.addEventListener('click',()=>{
+ const theme=themeRoot.dataset.theme==='dark'?'light':'dark';
+ applyTheme(theme);try{localStorage.setItem('jamil-theme',theme)}catch{}
+});
+document.body.append(themeToggle);
 const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('#site-nav');
 function closeMenu(){if(nav)nav.classList.remove('open');if(menu){menu.setAttribute('aria-expanded','false');menu.querySelector('span').textContent='＋'}}
 if(menu)menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.querySelector('span').textContent=open?'−':'＋'});
