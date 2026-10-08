@@ -29,26 +29,26 @@
 @media(max-width:760px){.resume-page{padding:0 12px 15px}.resume-heading{margin-bottom:35px}.resume-entry{padding:30px 0 35px}.resume-entry h2{font-size:13px}.resume-entry p{font-size:13px}.resume-section-title{font-size:13px;margin-top:42px}}
 
 /* Dark theme, with a persistent light-mode option. */
-:root:not([data-theme="light"]){color-scheme:dark;--bg:#171918;--paper:#232624;--ink:#f2f1e9;--muted:#b4b9af;--accent:#f3905e;--line:#393f38}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#171918;--paper:#232624;--ink:#f2f1e9;--muted:#b4b9af;--accent:#f3905e;--line:#393f38}
 :root[data-theme="light"]{color-scheme:light}
 .theme-toggle{position:fixed;right:22px;bottom:22px;z-index:35;display:flex;align-items:center;gap:9px;min-height:44px;padding:12px 17px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:30px;font-size:12px;font-weight:700;box-shadow:0 8px 25px #0003}
 .theme-toggle:hover{border-color:var(--accent)}
-:root:not([data-theme="light"]) .sidebar,:root:not([data-theme="light"]) .sidebar nav{background:#202420}
-:root:not([data-theme="light"]) .menu-toggle{color:var(--ink)}
-:root:not([data-theme="light"]) .monogram{background:#303c30;border-color:#56624e}
-:root:not([data-theme="light"]) .monogram:before{border-color:#56624e}
-:root:not([data-theme="light"]) .primary,:root:not([data-theme="light"]) .sidebar nav .nav-project{background:var(--accent);color:#171918!important}
-:root:not([data-theme="light"]) .primary:hover,:root:not([data-theme="light"]) .sidebar nav .nav-project:hover{background:#ffab7e}
-:root:not([data-theme="light"]) .filters button.active,:root:not([data-theme="light"]) .filters button:hover{color:#171918}
-:root:not([data-theme="light"]) .welcome-portrait figcaption,:root:not([data-theme="light"]) .live-screenshot figcaption{background:#262c25;color:var(--muted)}
-:root:not([data-theme="light"]) .callout,:root:not([data-theme="light"]) .creative-card,:root:not([data-theme="light"]) .contact-panel,:root:not([data-theme="light"]) .my-story,:root:not([data-theme="light"]) .shop-teaser,:root:not([data-theme="light"]) .shop-coming,:root:not([data-theme="light"]) .project-value,:root:not([data-theme="light"]) .more-links a{background:#262e25}
-:root:not([data-theme="light"]) .more-links a:hover,:root:not([data-theme="light"]) .secondary:hover{background:#354032}
-:root:not([data-theme="light"]) .social-links a,:root:not([data-theme="light"]) .shop-copy .status{background:#242b23;border-color:var(--line)}
-:root:not([data-theme="light"]) .social-links a:hover{background:#354032;border-color:var(--accent)}
-:root:not([data-theme="light"]) .mango-card{background:#3e3321}
-:root:not([data-theme="light"]) .pickle-card,:root:not([data-theme="light"]) .shop-visual{background:#2b3928}
-:root:not([data-theme="light"]) .personality-card p{color:var(--muted)}
-:root:not([data-theme="light"]) .resume-entry h2{color:var(--ink)}
-:root:not([data-theme="light"]) .resume-entry,:root:not([data-theme="light"]) .live-screenshot,:root:not([data-theme="light"]) .status,:root:not([data-theme="light"]) .sidebar nav a:hover{border-color:var(--line)}
-:root:not([data-theme="light"]) .skip{background:var(--accent);color:#171918}
+:root[data-theme="dark"] .sidebar,:root[data-theme="dark"] .sidebar nav{background:#202420}
+:root[data-theme="dark"] .menu-toggle{color:var(--ink)}
+:root[data-theme="dark"] .monogram{background:#303c30;border-color:#56624e}
+:root[data-theme="dark"] .monogram:before{border-color:#56624e}
+:root[data-theme="dark"] .primary,:root[data-theme="dark"] .sidebar nav .nav-project{background:var(--accent);color:#171918!important}
+:root[data-theme="dark"] .primary:hover,:root[data-theme="dark"] .sidebar nav .nav-project:hover{background:#ffab7e}
+:root[data-theme="dark"] .filters button.active,:root[data-theme="dark"] .filters button:hover{color:#171918}
+:root[data-theme="dark"] .welcome-portrait figcaption,:root[data-theme="dark"] .live-screenshot figcaption{background:#262c25;color:var(--muted)}
+:root[data-theme="dark"] .callout,:root[data-theme="dark"] .creative-card,:root[data-theme="dark"] .contact-panel,:root[data-theme="dark"] .my-story,:root[data-theme="dark"] .shop-teaser,:root[data-theme="dark"] .shop-coming,:root[data-theme="dark"] .project-value,:root[data-theme="dark"] .more-links a{background:#262e25}
+:root[data-theme="dark"] .more-links a:hover,:root[data-theme="dark"] .secondary:hover{background:#354032}
+:root[data-theme="dark"] .social-links a,:root[data-theme="dark"] .shop-copy .status{background:#242b23;border-color:var(--line)}
+:root[data-theme="dark"] .social-links a:hover{background:#354032;border-color:var(--accent)}
+:root[data-theme="dark"] .mango-card{background:#3e3321}
+:root[data-theme="dark"] .pickle-card,:root[data-theme="dark"] .shop-visual{background:#2b3928}
+:root[data-theme="dark"] .personality-card p{color:var(--muted)}
+:root[data-theme="dark"] .resume-entry h2{color:var(--ink)}
+:root[data-theme="dark"] .resume-entry,:root[data-theme="dark"] .live-screenshot,:root[data-theme="dark"] .status,:root[data-theme="dark"] .sidebar nav a:hover{border-color:var(--line)}
+:root[data-theme="dark"] .skip{background:var(--accent);color:#171918}
 @media(max-width:760px){.theme-toggle{right:16px;bottom:16px;padding:11px 14px}}

@@ -1,7 +1,7 @@
 // Remember the visitor's theme across every page.
 const themeRoot=document.documentElement;
-let savedTheme='dark';
-try{const value=localStorage.getItem('jamil-theme');if(value==='light'||value==='dark')savedTheme=value}catch{}
+let savedTheme='light';
+try{const value=sessionStorage.getItem('jamil-visit-theme');if(value==='light'||value==='dark')savedTheme=value}catch{}
 const themeToggle=document.createElement('button');
 themeToggle.type='button';themeToggle.className='theme-toggle';
 function applyTheme(theme){
@@ -15,7 +15,7 @@ function applyTheme(theme){
 applyTheme(savedTheme);
 themeToggle.addEventListener('click',()=>{
  const theme=themeRoot.dataset.theme==='dark'?'light':'dark';
- applyTheme(theme);try{localStorage.setItem('jamil-theme',theme)}catch{}
+ applyTheme(theme);try{sessionStorage.setItem('jamil-visit-theme',theme)}catch{}
 });
 document.body.append(themeToggle);
 const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('#site-nav');
