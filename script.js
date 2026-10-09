@@ -10,7 +10,7 @@ function applyTheme(theme){
  themeToggle.textContent=dark?'☀ Light mode':'☾ Dark mode';
  themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
  const meta=document.querySelector('meta[name="theme-color"]');
- if(meta)meta.content=dark?'#171918':'#f6f5f0';
+ if(meta)meta.content=dark?'#060e17':'#eef4f7';
 }
 applyTheme(savedTheme);
 themeToggle.addEventListener('click',()=>{
@@ -27,3 +27,4 @@ if(!reduced&&'IntersectionObserver' in window){const observer=new IntersectionOb
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{const value=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>{const active=b===button;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});document.querySelectorAll('[data-category]').forEach(tile=>{tile.hidden=value!=='all'&&tile.dataset.category!==value;if(!tile.hidden)tile.classList.add('visible')})}));
 let queued=false;function progress(){const bar=document.querySelector('.progress');if(bar){const total=document.documentElement.scrollHeight-innerHeight;bar.style.transform=`scaleX(${total>0?Math.min(1,scrollY/total):0})`}queued=false}addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(progress)}},{passive:true});addEventListener('resize',progress);progress();
 document.querySelectorAll('a[href]').forEach(a=>a.addEventListener('click',e=>{const url=new URL(a.href);if(reduced||e.defaultPrevented||e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||a.target||a.hasAttribute('download')||url.protocol!==location.protocol||url.host!==location.host||!url.pathname.endsWith('.html')||url.pathname===location.pathname)return;e.preventDefault();closeMenu();document.body.classList.add('leaving');setTimeout(()=>location.href=url.href,160)}));addEventListener('pageshow',()=>document.body.classList.remove('leaving'));
+
