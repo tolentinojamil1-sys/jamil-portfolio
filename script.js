@@ -29,11 +29,3 @@ let queued=false;function progress(){const bar=document.querySelector('.progress
 document.querySelectorAll('a[href]').forEach(a=>a.addEventListener('click',e=>{const url=new URL(a.href);if(reduced||e.defaultPrevented||e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||a.target||a.hasAttribute('download')||url.protocol!==location.protocol||url.host!==location.host||!url.pathname.endsWith('.html')||url.pathname===location.pathname)return;e.preventDefault();closeMenu();document.body.classList.add('leaving');setTimeout(()=>location.href=url.href,160)}));addEventListener('pageshow',()=>document.body.classList.remove('leaving'));
 
 
-// Guided inquiry: clear email handoff and a manual-copy fallback.
-const inquiryForm=document.querySelector('#project-inquiry');
-if(inquiryForm){
- const status=document.querySelector('#inquiry-status');
- function inquiry(){const data=new FormData(inquiryForm);return `Website project inquiry\n\nName: ${data.get('name')}\nEmail: ${data.get('email')}\nBusiness: ${data.get('business')}\nService: ${data.get('service')}\n\nProject details:\n${data.get('details')}`;}
- inquiryForm.addEventListener('submit',event=>{event.preventDefault();if(!inquiryForm.reportValidity())return;const message=inquiry();status.textContent='Opening your email app. Review the message and press Send there. If it doesn’t open, use Copy inquiry and email Jamil directly.';location.href='mailto:tolentinojamil1@gmail.com?subject='+encodeURIComponent('Website Project Inquiry')+'&body='+encodeURIComponent(message);});
- document.querySelector('#copy-inquiry').addEventListener('click',async()=>{if(!inquiryForm.reportValidity())return;const message=inquiry();try{await navigator.clipboard.writeText(message);status.textContent='Inquiry copied. Paste it into an email to tolentinojamil1@gmail.com.';}catch{const fallback=document.querySelector('#inquiry-copy');fallback.hidden=false;fallback.value=message;fallback.focus();fallback.select();status.textContent='Select and copy the prepared inquiry below, then email it to tolentinojamil1@gmail.com.';}});
-}

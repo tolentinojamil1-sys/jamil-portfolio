@@ -1,0 +1,8 @@
+// Guided inquiry: clear email handoff and a manual-copy fallback.
+const inquiryForm=document.querySelector('#project-inquiry');
+if(inquiryForm){
+ const status=document.querySelector('#inquiry-status');
+ function inquiry(){const data=new FormData(inquiryForm);return `Website project inquiry\n\nName: ${data.get('name')}\nEmail: ${data.get('email')}\nBusiness: ${data.get('business')}\nService: ${data.get('service')}\n\nProject details:\n${data.get('details')}`;}
+ inquiryForm.addEventListener('submit',event=>{event.preventDefault();if(!inquiryForm.reportValidity())return;const message=inquiry();status.textContent='Opening your email app. Review the message and press Send there. If it doesn’t open, use Copy inquiry and email Jamil directly.';location.href='mailto:tolentinojamil1@gmail.com?subject='+encodeURIComponent('Website Project Inquiry')+'&body='+encodeURIComponent(message);});
+ document.querySelector('#copy-inquiry').addEventListener('click',async()=>{if(!inquiryForm.reportValidity())return;const message=inquiry();const preview=document.querySelector('#inquiry-copy');preview.hidden=false;preview.value=message;status.textContent='Your inquiry is ready below. Copy it and email tolentinojamil1@gmail.com.';try{await navigator.clipboard.writeText(message);status.textContent='Inquiry copied. Paste it into an email to tolentinojamil1@gmail.com.';}catch{const fallback=document.querySelector('#inquiry-copy');fallback.hidden=false;fallback.value=message;fallback.focus();fallback.select();status.textContent='Select and copy the prepared inquiry below, then email it to tolentinojamil1@gmail.com.';}});
+}
