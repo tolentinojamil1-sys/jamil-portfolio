@@ -17,7 +17,8 @@ themeToggle.addEventListener('click',()=>{
  const theme=themeRoot.dataset.theme==='dark'?'light':'dark';
  applyTheme(theme);try{sessionStorage.setItem('jamil-visit-theme',theme)}catch{}
 });
-document.body.append(themeToggle);
+const themeHost=document.querySelector('.site-header');
+(themeHost||document.body).append(themeToggle);
 const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('#site-nav');
 function closeMenu(){if(nav)nav.classList.remove('open');if(menu){menu.setAttribute('aria-expanded','false');menu.querySelector('span').textContent='＋'}}
 if(menu)menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.querySelector('span').textContent=open?'−':'＋'});
