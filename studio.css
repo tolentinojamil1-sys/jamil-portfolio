@@ -154,3 +154,16 @@ p {line-height:1.7}
  .pill,.home-proof .tile,.home-proof .live-screenshot img,.service-preview-grid>a{transition:none!important}
  .pill:hover,.home-proof .tile:hover,.service-preview-grid>a:hover{transform:none!important}
 }
+
+/* Dark mode keeps interactive surfaces legible. */
+:root[data-theme="dark"] .pill.primary,
+:root[data-theme="dark"] .primary {
+  background:#a9c0ff; border-color:#a9c0ff; color:#101724!important;
+}
+:root[data-theme="dark"] .site-header .hud-nav .nav-contact:hover {
+  background:#a9c0ff; border-color:#a9c0ff; color:#101724!important;
+}
+:root[data-theme="dark"] .studio-corner-label {
+  background:#a9c0ff; color:#101724;
+}
+:root[data-theme="dark"] .home-closing .callout h2 em{color:#a9c0ff}
