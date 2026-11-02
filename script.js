@@ -30,3 +30,21 @@ let queued=false;function progress(){const bar=document.querySelector('.progress
 document.querySelectorAll('a[href]').forEach(a=>a.addEventListener('click',e=>{const url=new URL(a.href);if(reduced||e.defaultPrevented||e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||a.target||a.hasAttribute('download')||url.protocol!==location.protocol||url.host!==location.host||!url.pathname.endsWith('.html')||url.pathname===location.pathname)return;e.preventDefault();closeMenu();document.body.classList.add('leaving');setTimeout(()=>location.href=url.href,160)}));addEventListener('pageshow',()=>document.body.classList.remove('leaving'));
 
 
+
+/* Seasonal Christmas treatment: keep the normal site available by removing this block and christmas.css. */
+(function(){
+ const seasonalStyle=document.createElement('link');
+ seasonalStyle.rel='stylesheet';seasonalStyle.href='christmas.css?v=2026';
+ document.head.appendChild(seasonalStyle);
+ const ribbon=document.createElement('div');ribbon.className='holiday-ribbon';
+ ribbon.innerHTML='<span class="holiday-star" aria-hidden="true">✦</span><span>Happy Holidays from Jamil Tolentino · Wishing you a creative season!</span><span class="holiday-star" aria-hidden="true">✦</span>';
+ const header=document.querySelector('.site-header');
+ if(header)header.before(ribbon);else document.body.prepend(ribbon);
+ const hero=document.querySelector('.welcome-copy');
+ if(hero){const note=document.createElement('div');note.className='holiday-card';note.innerHTML='<span class="holly" aria-hidden="true">✦</span> Christmas Edition 2026 <span aria-hidden="true">✦</span>';hero.prepend(note)}
+ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const snow=document.createElement('div');snow.className='holiday-snow';snow.setAttribute('aria-hidden','true');
+  for(let i=0;i<18;i++){const flake=document.createElement('span');flake.className='holiday-flake';flake.textContent='❄';flake.style.left=(i*37%101)+'%';flake.style.fontSize=(10+i%4*3)+'px';flake.style.animationDuration=(14+i%6*3)+'s';flake.style.animationDelay=(-i*2.3)+'s';snow.appendChild(flake)}
+  document.body.appendChild(snow);
+ }
+})();
