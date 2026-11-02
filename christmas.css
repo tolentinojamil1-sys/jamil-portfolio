@@ -1,0 +1,27 @@
+/* Jamil Tolentino — Christmas edition. Self-contained seasonal layer. */
+:root{--accent:#a92534;--signal:#a92534;--gold:#c1923f;--glow:rgba(145,39,54,.12);--line:#e6ded9}
+:root[data-theme="dark"]{--accent:#ffb4b6;--signal:#ffb4b6;--gold:#eac580;--line:#45524a;--glow:rgba(255,180,182,.12)}
+body{background-image:radial-gradient(circle at 96% 8%,rgba(31,111,70,.065),transparent 34%),radial-gradient(circle at 0% 46%,rgba(185,45,56,.045),transparent 35%)}
+.site-header{border-bottom:2px solid #196c48}
+.site-header>a:first-child span{color:#bd3541}
+.site-header>a:first-child::after{content:' ✦';font-size:.55em;color:#bd973f;vertical-align:top}
+.holiday-ribbon{position:relative;z-index:61;display:flex;justify-content:center;align-items:center;gap:12px;padding:9px 18px;background:#145b40;color:#fff;text-align:center;font-size:12px;font-weight:700;letter-spacing:.04em;line-height:1.5}
+.holiday-ribbon .holiday-star{color:#f8d28a}
+.holiday-ribbon a{color:white;text-decoration:underline;text-underline-offset:3px}
+.holiday-ribbon a:hover{color:#f8d28a}
+.welcome h1 span,.proof-heading h2 em,.page-intro h1 em{color:#176a49}
+:root[data-theme="dark"] .welcome h1 span,:root[data-theme="dark"] .proof-heading h2 em,:root[data-theme="dark"] .page-intro h1 em{color:#9fe3b7}
+.hud-tag:before{background:#176a49}
+.pill.primary,.primary{background:#a92534;border-color:#a92534}
+.pill.primary:hover{background:#871b28;border-color:#871b28}
+.studio-corner-label{background:#176a49}
+.portrait-hud{box-shadow:0 28px 85px rgba(24,100,65,.1);border-color:#d8dfd8}
+.portrait-hud:after{content:'✦';position:absolute;bottom:64px;right:22px;color:#c99e4a;font-size:26px;pointer-events:none}
+.holiday-card{display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border:1px solid #d7b98d;border-radius:999px;background:rgba(255,249,235,.95);color:#765120;font-size:12px;font-weight:700;letter-spacing:.035em;margin:0 0 14px}
+:root[data-theme="dark"] .holiday-card{background:#2b342c;color:#f3d69c;border-color:#7e6744}
+.holiday-card .holly{color:#ad2b37}
+.holiday-snow{position:fixed;inset:0;z-index:75;pointer-events:none;overflow:hidden}
+.holiday-flake{position:absolute;top:-24px;color:#9fbaae;opacity:.65;font-size:15px;animation:holiday-fall linear infinite;user-select:none}
+@keyframes holiday-fall{to{transform:translate3d(34px,110vh,0) rotate(140deg)}}
+@media(prefers-reduced-motion:reduce){.holiday-snow{display:none}}
+@media(max-width:760px){.holiday-ribbon{font-size:11px;padding:8px 12px}.holiday-flake:nth-child(n+9){display:none}}
