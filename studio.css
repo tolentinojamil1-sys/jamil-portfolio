@@ -167,3 +167,13 @@ p {line-height:1.7}
   background:#a9c0ff; color:#101724;
 }
 :root[data-theme="dark"] .home-closing .callout h2 em{color:#a9c0ff}
+
+/* Jamil Tolentino personal identity */
+.site-header .brand-lockup{display:inline-flex;align-items:center;gap:12px;flex:0 0 auto;text-decoration:none;min-width:0}
+.site-header .brand-lockup img{display:block;width:48px;height:48px;flex:0 0 48px;border-radius:13px;transition:transform .25s ease,box-shadow .25s ease}
+.site-header .brand-lockup:hover img{transform:translateY(-2px) rotate(-2deg);box-shadow:0 7px 20px var(--glow)}
+.site-header .brand-wordmark{display:flex;flex-direction:column;gap:4px;line-height:1.05}
+.site-header .brand-wordmark strong{font-size:13px;letter-spacing:1.35px;font-weight:800;color:var(--ink);white-space:nowrap}
+.site-header .brand-wordmark small{font-size:8px;letter-spacing:2px;font-weight:700;color:var(--muted);white-space:nowrap}
+@media(max-width:760px){.site-header .brand-lockup{gap:9px}.site-header .brand-lockup img{width:42px;height:42px;flex-basis:42px}.site-header .brand-wordmark strong{font-size:11px;letter-spacing:1px}.site-header .brand-wordmark small{font-size:7px;letter-spacing:1.6px}}
+@media(max-width:420px){.site-header .brand-lockup img{width:38px;height:38px;flex-basis:38px}.site-header .brand-wordmark strong{font-size:10px}}
